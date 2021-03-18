@@ -1,3 +1,9 @@
+# Ejemplo de autenticación JWT.
+## URL Post original: https://bezkoder.com/spring-boot-jwt-authentication/
+### Modificaciones: Se cambia la configuración de la conexión de base de datos de MySql a una base H2 en memoria, para simplificación. También se habilita en la configuración de SpringSecurity la URL base h2-console, para poder acceder a la consola de la base de datos.
+### Se debe modificar en el archivo application.properties el String de conexión para persistir los datos de la base H2 en un archivo válido.
+### Se agrega al proyecto colección de postman para probar.
+
 # Spring Boot JWT Authentication example with Spring Security & Spring Data JPA
 
 ## User Registration, User Login and Authorization process.
