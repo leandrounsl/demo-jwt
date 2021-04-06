@@ -1,5 +1,7 @@
 package com.bezkoder.springjwt.payload.response;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class JwtResponse {
@@ -9,6 +11,8 @@ public class JwtResponse {
 	private String username;
 	private String email;
 	private List<String> roles;
+	private Date dateCreated;
+	private Date dateDue;
 
 	public JwtResponse(String accessToken, Long id, String username, String email, List<String> roles) {
 		this.token = accessToken;
@@ -16,6 +20,10 @@ public class JwtResponse {
 		this.username = username;
 		this.email = email;
 		this.roles = roles;
+		Calendar calendarInstance = Calendar.getInstance();
+		this.dateCreated = calendarInstance.getTime();
+		calendarInstance.add(Calendar.HOUR, 1);
+		this.dateDue = calendarInstance.getTime();
 	}
 
 	public String getAccessToken() {
@@ -60,5 +68,21 @@ public class JwtResponse {
 
 	public List<String> getRoles() {
 		return roles;
+	}
+
+	public Date getDateCreated() {
+		return dateCreated;
+	}
+
+	public void setDateCreated(Date dateCreated) {
+		this.dateCreated = dateCreated;
+	}
+
+	public Date getDateDue() {
+		return dateDue;
+	}
+
+	public void setDateDue(Date dateDue) {
+		this.dateDue = dateDue;
 	}
 }
